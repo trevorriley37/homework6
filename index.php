@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
-
+<?php require_once("header.php"); ?>
 
 
 <head>
@@ -18,7 +18,7 @@
     });
 </script>
 <body>
-    
+
     <p>If you double-click on me, I will disappear.</p>
     <p>Click me away!</p>
     <p>Click me too!</p>
