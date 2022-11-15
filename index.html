@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
+
 
 
 <head>
@@ -10,10 +10,11 @@
     <title></title>
 </head>
 <body>
-
-    <script>{
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        { 
             const svg = d3.create("svg")
-                .attr("viewBox", [0, 0, width, height]);
+                .attr("viewBox", [100, 100, width, height]);
 
             const rect = svg.selectAll("g")
                 .data(y01z)
@@ -25,7 +26,7 @@
                 .attr("x", (d, i) => x(i))
                 .attr("y", height - margin.bottom)
                 .attr("width", x.bandwidth())
-                .attr("height", 0);
+                .attr("height", 100);
 
             svg.append("g")
                 .call(xAxis);
@@ -63,7 +64,8 @@
 
             return Object.assign(svg.node(), { update });
         }</script>
-    
-    
+
+
+
 </body>
 </html>
