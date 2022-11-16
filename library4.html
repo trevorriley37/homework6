@@ -26,37 +26,34 @@
         </div>
     </nav>
 </head>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="p5create.js"></script>
+
+    <meta charset="utf-8" />
+
+</head>
 <body>
-
-    <canvas id="canvas-image-blending"></canvas>
-
-    <!-- Call the script -->
-    <script src="granim.min.js"></script>
-
-    <!-- Create a Granim instance -->
+    <script src="examples/Planet game/sketch.js"></script>
     <script>
-        var granimInstance = new Granim({
-            element: '#canvas-image-blending',
-            direction: 'top-bottom',
-            isPausedWhenNotInView: true,
-            image: {
-                source: '../assets/img/bg-forest.jpg',
-                blendingMode: 'multiply'
-            },
-            states: {
-                "default-state": {
-                    gradients: [
-                        ['#29323c', '#485563'],
-                        ['#FF6B6B', '#556270'],
-                        ['#80d3fe', '#7ea0c4'],
-                        ['#f0ab51', '#eceba3']
-                    ],
-                    transitionSpeed: 7000
-                }
+        function createanimation(sprite, spritepath, ext, numberofsprites, timestamp, state) {
+            framesarray = []
+            for (let i = 0; i < numberofsprites; i++) {
+                spritetoadd = loadImage(spritepath + (i + 1) + ext)
+                framesarray.push(spritetoadd)
             }
-        });
-    </script>
-
-
+            var animation = {
+                sprite: sprite,
+                numberofsprites: numberofsprites,
+                timestamp: timestamp,
+                frames: framesarray,
+                currentframe: 1,
+                timecount: 0,
+                state: state
+            }
+            animations.push(animation)
+            return animation
+        }</script>
 </body>
 </html>
